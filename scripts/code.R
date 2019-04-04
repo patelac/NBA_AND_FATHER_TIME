@@ -51,13 +51,50 @@ ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$`FT%`)) + geom_point
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$AST)) + geom_point(size=1, shape=2) + geom_smooth(method=lm)
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$`TS%`)) + geom_point(size=1, shape=3) + geom_smooth(method=lm)
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$PTS)) + geom_point(size=1, shape=20) + geom_smooth(method=lm)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$G)) + geom_point(size=1, shape=22) + geom_smooth(method=lm)
 
 
 FGP_log <- log(Seasons_sub$`FG%`)
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= FGP_log)) + geom_point(shape=1) + geom_smooth(method=lm)
 
 hist(Seasons_sub$`FG%`) 
-hist(Seasons_sub$FGP_log) 
-hist(Seasons_sub$`TS%`) 
+hist(Seasons_sub$`TS%`)
 
+boxplot(Seasons_sub$`FG%` ~ Seasons_sub$Age,
+        +       data = Seasons_sub,
+        +         ylab="FG%",
+        +         xlab="Age")
 
+boxplot(Seasons_sub$`FT%` ~ Seasons_sub$Age,
+        +         data = Seasons_sub,
+        +         ylab="FT%",
+        +         xlab="Age")
+
+boxplot(Seasons_sub$`TS%` ~ Seasons_sub$Age,
+        +         data = Seasons_sub,
+        +         ylab="TS%",
+        +         xlab="Age")
+
+boxplot(Seasons_sub$PTS ~ Seasons_sub$Age,
+        +         data = Seasons_sub,
+        +         ylab="PTS",
+        +         xlab="Age")
+
+boxplot(Seasons_sub$G ~ Seasons_sub$Age,
+        +         data = Seasons_sub,
+        +         ylab="Games",
+        +         xlab="Age")
+
+boxplot(Seasons_sub$AST ~ Seasons_sub$Age,
+        +         data = Seasons_sub,
+        +         ylab="AST",
+        +         xlab="Age")
+
+FGvsAGE.aov <- aov(Seasons_sub$`FG%` ~ Seasons_sub$Age, data = Seasons_sub)
+summary(FGvsAGE.aov)
+
+FTvsAGE.aov <- aov(Seasons_sub$`FT%` ~ Seasons_sub$Age, data = Seasons_sub)
+summary(FTvsAGE.aov)
+
+TSvsAGE.aov <- aov(Seasons_sub$`TS%` ~ Seasons_sub$Age, data = Seasons_sub)
+summary(TSvsAGE.aov)
