@@ -6,11 +6,12 @@ player_data$career_len = player_data$year_end - player_data$year_start
 player_sub = subset(player_data, career_len >= 5 & career_len <= 15)
 
 Seasons_Stats = read.csv('./data/Seasons_Stats.csv')
-***Seasons_sub = subset(Seasons_Stats, Player)
+Seasons_sub = Seasons_Stats[duplicated(Seasons_Stats$Player),]
 
 ***common <- intersect(player_sub$name, Seasons_Stats$Player)  
 player_sub$name[common,] # give you common rows in data frame 1  
 Seasons_Stats$Player[common,] # give you common rows in data frame 2
+
 # initial exploration ------
 
 summary(player_data)
@@ -42,6 +43,20 @@ CFrame4 <- subset(CFrame3, CareerVector >= 5 )
 View(CFrame4)
 
 FinalNames <- CFrame4$Names
+
+## Fit models with appropriate data with only repeats that have a career length of 5-15 years
+
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$`FG%`)) + geom_point(size=1, shape=23) + geom_smooth(method=lm)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$`FT%`)) + geom_point(size=1, shape=1) + geom_smooth(method=lm)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$AST)) + geom_point(size=1, shape=2) + geom_smooth(method=lm)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$`TS%`)) + geom_point(size=1, shape=3) + geom_smooth(method=lm)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$PTS)) + geom_point(size=1, shape=20) + geom_smooth(method=lm)
+
+FGP_log <- log(Seasons_sub$`FG%`)
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= FGP_log)) + geom_point(shape=1) + geom_smooth(method=lm)
+
+hist(Seasons_sub$`FG%`) 
+hist(Seasons_sub$FGP_log) 
 
 
 
