@@ -168,8 +168,35 @@ PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age,
 summary(PFvsAGE.lm)
 anova(PFvsAGE.lm)
 
-## Analysis of R Squared values and Discuss results
+## Analysis of R Squared values and  further Correlation tests to test for an association/correlation between paired samples.
 
 
+cor_AGEvsTS <- cor.test(Seasons_sub$Age, Seasons_sub$TS., 
+                method = "pearson")
+cor_AGEvsTS
+
+cor_AGEvsFG <- cor.test(Seasons_sub$Age, Seasons_sub$FG., 
+                        method = "pearson")
+cor_AGEvsFG
+
+cor_AGEvsPF <- cor.test(Seasons_sub$Age, Seasons_sub$PF, 
+                        method = "pearson")
+cor_AGEvsPF
+
+cor_AGEvsAST <- cor.test(Seasons_sub$Age, Seasons_sub$AST, 
+                        method = "pearson")
+cor_AGEvsAST
+
+cor_AGEvsPTS <- cor.test(Seasons_sub$Age, Seasons_sub$PTS, 
+                        method = "pearson")
+cor_AGEvsPTS
+
+cor_AGEvsGames <- cor.test(Seasons_sub$Age, Seasons_sub$G, 
+                        method = "pearson")
+cor_AGEvsGames
+
+cor_AGEvsFT <- cor.test(Seasons_sub$Age, Seasons_sub$FT., 
+                        method = "pearson")
+cor_AGEvsFT
 
 
