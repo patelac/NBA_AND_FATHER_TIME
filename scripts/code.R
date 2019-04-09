@@ -167,6 +167,7 @@ PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age,
 
 summary(PFvsAGE.lm)
 anova(PFvsAGE.lm)
+
 ## Analysis of R Squared values and Discuss results
 
 
