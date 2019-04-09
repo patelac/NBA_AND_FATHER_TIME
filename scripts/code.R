@@ -199,4 +199,3 @@ cor_AGEvsFT <- cor.test(Seasons_sub$Age, Seasons_sub$FT.,
                         method = "pearson")
 cor_AGEvsFT
 
-
