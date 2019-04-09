@@ -121,7 +121,7 @@ summary(ASTvsAGE.lm)
 PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age, data = Seasons_sub)
 summary(PFvsAGE.lm)
 
-#### Analysis of R Squared values and Discuss results
+## Analysis of R Squared values and Discuss results
 
 
 
