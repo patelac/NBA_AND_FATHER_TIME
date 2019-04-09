@@ -130,37 +130,43 @@ FGvsAGE.lm <- lm(Seasons_sub$`FG.` ~ Seasons_sub$Age,
                  data = Seasons_sub)
 
 summary(FGvsAGE.lm)
+anova(FGvsAGE.lm)
 
 FTvsAGE.lm <- lm(Seasons_sub$`FT.` ~ Seasons_sub$Age, 
                  data = Seasons_sub)
 
 summary(FTvsAGE.lm)
+anova(FTvsAGE.lm)
 
 TSvsAGE.lm <- lm(Seasons_sub$`TS.` ~ Seasons_sub$Age, 
                  data = Seasons_sub)
 
 summary(TSvsAGE.lm)
+anova(TSvsAGE.lm)
 
 PTSvsAGE.lm <- lm(Seasons_sub$PTS ~ Seasons_sub$Age,
                   data = Seasons_sub)
 
 summary(PTSvsAGE.lm)
+anova(PTSvsAGE.lm)
 
 GamesvsAGE.lm <- lm(Seasons_sub$G ~ Seasons_sub$Age, 
                     data = Seasons_sub)
 
 summary(GamesvsAGE.lm)
+anova(GamesvsAGE.lm)
 
 ASTvsAGE.lm <- lm(Seasons_sub$AST ~ Seasons_sub$Age, 
                   data = Seasons_sub)
 
 summary(ASTvsAGE.lm)
+anova(ASTvsAGE.lm)
 
 PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age,
                  data = Seasons_sub)
 
 summary(PFvsAGE.lm)
-
+anova(PFvsAGE.lm)
 ## Analysis of R Squared values and Discuss results
 
 
