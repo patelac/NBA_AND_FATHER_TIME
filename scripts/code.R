@@ -82,43 +82,83 @@ ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$PF)) +
   xlab("Age") + ylab("PF")
 
 FGP_log <- log(Seasons_sub$`FG.`)
+
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= FGP_log)) + 
   geom_point(shape=1) + 
   geom_smooth(method=lm) +
   xlab("Age") + ylab("FGP_log")
 
-hist(Seasons_sub$`FG.`, xlab="FG%", col = "red") 
-hist(Seasons_sub$`TS.`, xlab ="TS%", col = "blue")
+hist(Seasons_sub$`FG.`,
+     xlab="FG%", 
+     col = "red") 
 
-boxplot(Seasons_sub$`FG.` ~ Seasons_sub$Age, data = Seasons_sub, ylab="FG%", xlab="Age")
-boxplot(Seasons_sub$`FT.` ~ Seasons_sub$Age, data = Seasons_sub, ylab="FT%", xlab="Age")
-boxplot(Seasons_sub$`TS.` ~ Seasons_sub$Age, data = Seasons_sub, ylab="TS%", xlab="Age")
-boxplot(Seasons_sub$PTS ~ Seasons_sub$Age, data = Seasons_sub, ylab="PTS", xlab="Age")
-boxplot(Seasons_sub$G ~ Seasons_sub$Age, data = Seasons_sub, ylab="Games", xlab="Age")
-boxplot(Seasons_sub$AST ~ Seasons_sub$Age, data = Seasons_sub, ylab="AST", xlab="Age")
-boxplot(Seasons_sub$PF ~ Seasons_sub$Age, data = Seasons_sub, ylab="PF", xlab="Age")
+hist(Seasons_sub$`TS.`, 
+     xlab ="TS%", 
+     col = "blue")
+
+boxplot(Seasons_sub$`FG.` ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="FG%", xlab="Age")
+
+boxplot(Seasons_sub$`FT.` ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="FT%", xlab="Age")
+
+boxplot(Seasons_sub$`TS.` ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="TS%", xlab="Age")
+
+boxplot(Seasons_sub$PTS ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="PTS", xlab="Age")
+
+boxplot(Seasons_sub$G ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="Games", xlab="Age")
+
+boxplot(Seasons_sub$AST ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="AST", xlab="Age")
+
+boxplot(Seasons_sub$PF ~ Seasons_sub$Age, 
+        data = Seasons_sub, 
+        ylab="PF", xlab="Age")
 
 ## Data analysis with appropriate data with only repeats that have a career length of 5-15 years
 
-FGvsAGE.lm <- lm(Seasons_sub$`FG.` ~ Seasons_sub$Age, data = Seasons_sub)
+FGvsAGE.lm <- lm(Seasons_sub$`FG.` ~ Seasons_sub$Age, 
+                 data = Seasons_sub)
+
 summary(FGvsAGE.lm)
 
-FTvsAGE.lm <- lm(Seasons_sub$`FT.` ~ Seasons_sub$Age, data = Seasons_sub)
+FTvsAGE.lm <- lm(Seasons_sub$`FT.` ~ Seasons_sub$Age, 
+                 data = Seasons_sub)
+
 summary(FTvsAGE.lm)
 
-TSvsAGE.lm <- lm(Seasons_sub$`TS.` ~ Seasons_sub$Age, data = Seasons_sub)
+TSvsAGE.lm <- lm(Seasons_sub$`TS.` ~ Seasons_sub$Age, 
+                 data = Seasons_sub)
+
 summary(TSvsAGE.lm)
 
-PTSvsAGE.lm <- lm(Seasons_sub$PTS ~ Seasons_sub$Age, data = Seasons_sub)
+PTSvsAGE.lm <- lm(Seasons_sub$PTS ~ Seasons_sub$Age,
+                  data = Seasons_sub)
+
 summary(PTSvsAGE.lm)
 
-GamesvsAGE.lm <- lm(Seasons_sub$G ~ Seasons_sub$Age, data = Seasons_sub)
+GamesvsAGE.lm <- lm(Seasons_sub$G ~ Seasons_sub$Age, 
+                    data = Seasons_sub)
+
 summary(GamesvsAGE.lm)
 
-ASTvsAGE.lm <- lm(Seasons_sub$AST ~ Seasons_sub$Age, data = Seasons_sub)
+ASTvsAGE.lm <- lm(Seasons_sub$AST ~ Seasons_sub$Age, 
+                  data = Seasons_sub)
+
 summary(ASTvsAGE.lm)
 
-PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age, data = Seasons_sub)
+PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age,
+                 data = Seasons_sub)
+
 summary(PFvsAGE.lm)
 
 ## Analysis of R Squared values and Discuss results
