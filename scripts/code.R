@@ -76,6 +76,11 @@ ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$G)) +
   geom_smooth(method=lm) + 
   xlab("Age") + ylab("Games")
 
+ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= Seasons_sub$PF)) + 
+  geom_point(size=1, shape=24) + 
+  geom_smooth(method=lm) + 
+  xlab("Age") + ylab("PF")
+
 FGP_log <- log(Seasons_sub$`FG.`)
 ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= FGP_log)) + 
   geom_point(shape=1) + 
@@ -91,6 +96,7 @@ boxplot(Seasons_sub$`TS.` ~ Seasons_sub$Age, data = Seasons_sub, ylab="TS%", xla
 boxplot(Seasons_sub$PTS ~ Seasons_sub$Age, data = Seasons_sub, ylab="PTS", xlab="Age")
 boxplot(Seasons_sub$G ~ Seasons_sub$Age, data = Seasons_sub, ylab="Games", xlab="Age")
 boxplot(Seasons_sub$AST ~ Seasons_sub$Age, data = Seasons_sub, ylab="AST", xlab="Age")
+boxplot(Seasons_sub$PF ~ Seasons_sub$Age, data = Seasons_sub, ylab="PF", xlab="Age")
 
 ## Data analysis with appropriate data with only repeats that have a career length of 5-15 years
 
@@ -111,6 +117,9 @@ summary(GamesvsAGE.lm)
 
 ASTvsAGE.lm <- lm(Seasons_sub$AST ~ Seasons_sub$Age, data = Seasons_sub)
 summary(ASTvsAGE.lm)
+
+PFvsAGE.lm <- lm(Seasons_sub$PF ~ Seasons_sub$Age, data = Seasons_sub)
+summary(PFvsAGE.lm)
 
 #### Analysis of R Squared values and Discuss results
 
