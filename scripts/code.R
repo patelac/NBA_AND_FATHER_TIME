@@ -172,7 +172,7 @@ anova(PFvsAGE.lm)
 
 
 cor_AGEvsTS <- cor.test(Seasons_sub$Age, Seasons_sub$TS., 
-                method = "pearson")
+                        method = "pearson")
 cor_AGEvsTS
 
 cor_AGEvsFG <- cor.test(Seasons_sub$Age, Seasons_sub$FG., 
