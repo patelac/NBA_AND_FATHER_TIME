@@ -137,12 +137,22 @@ ggplot(Seasons_sub, aes(x= Seasons_sub$Age , y= FGP_log)) +
 ## simple histogram to see the frequency and distribution between AGE and Field Goal %
 hist(Seasons_sub$`FG.`,
      xlab="FG%", 
-     col = "red"), 
+     col = "red") 
 
 ## simple histogram to see the frequency and distribution between AGE and True Shooting %
 hist(Seasons_sub$`TS.`, 
      xlab ="TS%", 
      col = "blue")
+
+## simple histogram to see the frequency and distribution between AGE and Assits
+hist(Seasons_sub$AST, 
+     xlab ="AST", 
+     col = "green")
+
+## simple histogram to see the frequency and distribution between AGE and Free Throw %
+hist(Seasons_sub$FT., 
+     xlab ="FT%", 
+     col = "pink")
 
 ## simple boxplots between AGE and Field Goal %
 boxplot(Seasons_sub$`FG.` ~ Seasons_sub$Age, 
