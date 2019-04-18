@@ -4,7 +4,7 @@ This is a sports analysis to determine whether age has an effect on diffrent sho
 
 Data from over 60 season was used, and filtered to only incorporate players who have played the average amount of career years which equal to 5-15 years. This was the average range of years that exclude true outliers like players who have played 1 or 20 years.
 
-Data was read into R.
+Data was read into R. 
 
 Initial exploration was conducted which proved there needed to be lower and upper parameters.
 

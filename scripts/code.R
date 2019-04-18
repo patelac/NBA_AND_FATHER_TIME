@@ -9,7 +9,7 @@ player_sub = subset(player_data, career_len >= 5 & career_len <= 15)
 
 ## subsetting the data that way it only presents duplicates and removes those who only played one season that way its viable data 
 Seasons_sub = Seasons_Stats[duplicated(Seasons_Stats$Player),]
-
+ 
 ## initial exploration ------
 FGP <- (Seasons_Stats$FG.)
 Age <- (Seasons_Stats$Age)
