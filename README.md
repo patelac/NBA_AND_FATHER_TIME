@@ -26,7 +26,7 @@ Library for variable names/abbreviations:
   PF = Personal Fouls,
   % or P = Percentage,
   Two_P = Two Point,
-  Three_P = Three Point,
+  Three_P = Three Point, 
   
 
 
