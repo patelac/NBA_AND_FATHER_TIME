@@ -16,6 +16,18 @@ Data analysis was further conducted to see the correlation between the tested va
 
 There was very little correlation within some groups of variables and a lot in one group of variables. Most interesting positive correlation was between free throw % and age. 
 
+Library for variable names/abbreviations:
+  FG = Field Goal
+  FT = Free Throw
+  TS = True Shooting
+  AST = Assists
+  PTS = Points
+  G =  Games
+  PF = Personal Fouls
+  % or P = Percentage
+  Two_P = Two Point
+  Three_P = Three Point
+  
 
 
 
